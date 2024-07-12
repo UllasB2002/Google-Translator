@@ -135,47 +135,46 @@ export default function MiniHomePage() {
     }
 
     return (
-        <div className="container mt-5">
-            <div className="text-center mb-5">
-                <p id="teamName"><b>TEAM Ctrl + Alt + Glory...</b></p>
-            </div>
-            <div className="card p-4">
-                <h5 className="card-title text-center mb-4"><b>Language Translator</b></h5>
-                <div className="row mb-3">
-                    <div className="col-md-6">
+        <div className="container mt-5 custom-width div1">
+            <div className="text-center mb-5 div1">
+                <p id="teamName"><b>Language Translator</b></p>
+            <div className="card p-4 fontSetter">
+                <div className="row mb-3 fontSetter">
+                    <div className="col-md-6 fontSetter">
                         <label htmlFor="sourceLang">Source Language:</label>
-                        <select id="sourceLang" className="form-select" value={flang} onChange={handleSourceLanguageChange}>
-                            <option value="">Select Source Language</option>
+                        <select id="sourceLang" className="form-select fontSetter" value={flang} onChange={handleSourceLanguageChange}>
+                            <option value="" className='halffontSetter'>Select Source Language</option>
                             {Object.keys(countries).map(lang => (
-                                <option key={lang} value={lang}>{lang}</option>
+                                <option key={lang} value={lang} className='halffontSetter'>{lang}</option>
                             ))}
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 fontSetter">
                         <label htmlFor="translatedLang">Translated Language:</label>
                         <select id="translatedLang" className="form-select" value={tlang} onChange={handleTranslatedLanguageChange}>
-                            <option value="">Select Translated Language</option>
+                            <option value="" className='halffontSetter'>Select Translated Language</option>
                             {Object.keys(countries).map(lang => (
-                                <option key={lang} value={lang}>{lang}</option>
+                                <option key={lang} value={lang} className='halffontSetter'>{lang}</option>
                             ))}
                         </select>
                     </div>
                 </div>
-                <div className="row mb-3">
-                    <div className="col-md-12">
+                <div className="row mb-3 fontSetter">
+                    <div className="col-md-12 fontSetter">
                         <label htmlFor="sourceText">Text to Translate:</label>
-                        <textarea id="sourceText" className="form-control" rows="3" value={Stext} onChange={handleSourceTextChange}></textarea>
+                        <textarea id="sourceText" className="form-control fontSetter" rows="3" value={Stext} onChange={handleSourceTextChange}></textarea>
                     </div>
                 </div>
-                <div className="text-center mb-3">
-                    <button className="btn btn-primary" onClick={send}>Translate</button>
+                <div className="text-center mb-3 fontSetter">
+                    <button className="btn btn-primary fontSetter translateButton" onClick={send}><p className='fontSetter'>Translate</p></button>
                 </div>
-                <div className="row mb-3">
-                    <div className="col-md-12">
+                <div className="row mb-3 fontSetter">
+                    <div className="col-md-12 fontSetter">
                         <label htmlFor="translatedText">Translation Result:</label>
-                        <textarea id="translatedText" className="form-control" rows="3" value={Ttext} onChange={handleTranslatedTextChange} readOnly></textarea>
+                        <textarea id="translatedText" className="form-control fontSetter" rows="3" value={Ttext} onChange={handleTranslatedTextChange} readOnly></textarea>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );
